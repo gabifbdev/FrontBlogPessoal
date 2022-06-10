@@ -60,11 +60,7 @@
 
     </div>
     </div>
-    <div class="tab-pane fade" id="nav-minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
-
-
-
-      
+    <div class="tab-pane fade" id="nav-minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab"> 
     <div class="card-columns">
       <div class="card text-center" *ngFor='let item of user.postagem'>
         <div class="card-body">
@@ -73,16 +69,17 @@
           <p class="card-text mt-3">{{item.texto}}</p>
           <p class="card-text"><small class="text-muted">
             {{item.data | date: 'dd/MM/yyyy'}} Às {{item.data | date: 'HH:mm'}}
-          
           </small></p>
           
-          
-
+      <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3" href="">Editar</a>
+      <a [routerLink]="['postagem-delete', item.id]" class="text-danger" href="">Apagar</a>
         </div>
       </div>
 
     </div>
     </div>
+
+
     <div class="tab-pane fade" id="nav-postagemTema" role="tabpanel" aria-labelledby="nav-postagemTema-tab">Postagens por Tema</div>
   </div>
 
