@@ -36,7 +36,7 @@ export class InicioComponent implements OnInit {
   ngOnInit(){
 
     window.scroll(0,0)
-    
+
     if(environment.token == ''){
       alert('Sessão expirada, faça o login novamente')
       this.router.navigate(['/entrar'])
@@ -72,6 +72,7 @@ getAllPostagens(){
 findByIdUser(){
   this.authService.getByIdUser(this.idUser).subscribe((resp: Usuario)=>{
     this.user = resp
+    console.log(this.user)
   })
 }
 
